@@ -1,1 +1,45 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myproject</title>
+     <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="canvas">
+        <h1>Color Scheme Switcher</h1>
+      <span class="button" id="grey"></span>
+      <span class="button" id="white"></span>
+      <span class="button" id="blue"></span>
+      <span class="button" id="gradient"></span>
+      <span class="button" id="more gradient"></span>
+    </div>
+</body>
+<script>
+    const buttons=document.querySelectorAll('.button');
+    const Switche=document.querySelector('body');
+    console.log(buttons);
+    buttons.forEach(function(items){
+        //console.log(items.innerHTML);
+             items.addEventListener('click', function (e){
+               // console.log(e.target);
+                if (e.target.id === 'grey') {
+      Switche.style.background = e.target.id;
+    }
+    if(e.target.id=='white'){
+        Switche.style.background=e.target.id;
+    }
+    if(e.target.id=='blue'){
+        Switche.style.background='purple';
+    }
+    if(e.target.id=='gradient'){
+        Switche.style.background= 'linear-gradient(45deg, red, blue)';
+    }
+     if(e.target.id=='more gradient'){
+        Switche.style.background= 'linear-gradient(45deg, red, blue)';
+    }
+             });
+    });
+</script>
+</html>
