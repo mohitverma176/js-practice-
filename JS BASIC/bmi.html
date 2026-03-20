@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bmi</title>
+      <link rel="stylesheet" href="styl.css" />
+</head>
+<body>
+    <div class="container">
+        <form>
+        <h1> BMI calc</h1>
+        <p><label>height in cm:</label><input type="text" id="height"></p>
+        <p><label> weight in kg</label><input type="text" id="weight"></p>
+        <button> calc</button>
+       <div class="guide" ><h2>BMI GUIDE</h2>
+        <div id="result"></div>
+        <p> if your bmi is less then the 18 or above then the 25 then you are malnutrition </p>
+    </div>
+        </form>
+    </div>
+</body>
+<script>
+      const form=document.querySelector('form');
+      console.log(form);
+      form.addEventListener('submit',function(e){
+        e.preventDefault();
+        const height=parseInt(document.querySelector('#height').value);
+        const weight=parseInt(document.querySelector('#weight').value);
+        const result=document.querySelector('#result');
+        if(height===''||height==0||isNaN(height)){
+            result.innerHTML='bada hu jaa phele';
+        }
+        else if(weight===''||weight==0||isNaN(weight)){
+            result.innerHTML='kha lo kuch';
+        }
+        else{
+            const bmi= (weight / ((height * height) / 10000)).toFixed(2);
+            result.innerHTML=`<span> ${bmi}</span>`;
+        }
+      })
+      
+    
+      
+</script>
+</html>
